@@ -4,37 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css"/>
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-    <py-env>
-        - phonenumbers
-    </py-env>
+
+    <style>
+        label {
+            font-weight: bold;
+        }
+    </style>
     <title>PhoneData</title>
 </head>
-<body>
-    <py-script src="app.py"></py-script>
-    <section>
-        <h1>PhoneData with pyscript</h1>
-        <div>
-            <label>Enter phonenumber with country code:</label>
-            <input id="phone-input" class="py-input" type="text" placeholder="+112233445566">
-            <button id="s-button" class="py-button" type="submit" py-onclick="searchPhoneData">
-            SUBMIT</button>
-        </div>
-        <br>
-        <div>
-            <label>Phone Number:</label>
-            <p id="phone"></p>
-            <label>Timezone:</label>
-            <p id="timezone"></p>
-            <label>Region:</label>
-            <p id="region"></p>
-            <label>Valid Mobile Number:</label>
-            <p id="valid"></p>
-            <label>Possibility of Number:</label>
-            <p id="possibility"></p>
-        </div>
-    </section>
+<body class="container">
+    <py-env>
+        #shadow-root (open)
+        - phonenumbers
+    </py-env>
+    <py-script src="app.py">
+        #shadow-root (open)
+    </py-script>
+    <main>
+        <section>
+            <div class="text-center w-full mb-8">
+                <h1 class="text-3x1 font-bold uppercase tracking-tight">PhoneData with pyscript</h1>
+            </div>
+            <div>
+                <p>Enter phonenumber with country code:</p>
+                <input id="phone-input" class="py-input" type="text" autocomplete="off" placeholder="+112233445566">
+                <!-- <input id="phone-input" class="py-input" type="text"> -->
+                <button id="s-button" class="py-button" type="submit" py-onclick="searchPhoneData">
+                SUBMIT</button>
+            </div>
+            <br>
+            <div>
+                <label>Phone Number:</label>
+                <span id="phone"></span>
+                <br/>
+                <label>Timezone:</label>
+                <span id="timezone"></span>
+                <br/>
+                <label>Region:</label>
+                <span id="region"></span>
+                <br/>
+                <label>Valid Mobile Number:</label>
+                <span id="valid"></span>
+                <br/>
+                <label>Possibility of Number:</label>
+                <span id="possibility"></span>
+            </div>
+        </section>
+    </main>
+
 
 </body>
 </html>
+<!--          __       ____
+   ________  / /______/ __ \
+  / ___/ _ \/ __/ ___/ / / /
+ / /  /  __/ /_/ /  / /_/ /
+/_/   \___/\__/_/   \____/   -->

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css"/>
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     <py-env>
@@ -14,8 +13,28 @@
 </head>
 <body>
     <py-script src="app.py"></py-script>
-    <h1>PhoneData with pyscript</h1>
-    <label>Enter phonenumber with country code:</label>
-    <input id="phone" class="py-input" type="text">
+    <section>
+        <h1>PhoneData with pyscript</h1>
+        <div>
+            <label>Enter phonenumber with country code:</label>
+            <input id="phone-input" class="py-input" type="text" placeholder="+112233445566">
+            <button id="s-button" class="py-button" type="submit" py-onclick="searchPhoneData">
+            SUBMIT</button>
+        </div>
+        <br>
+        <div>
+            <label>Phone Number:</label>
+            <p id="phone"></p>
+            <label>Timezone:</label>
+            <p id="timezone"></p>
+            <label>Region:</label>
+            <p id="region"></p>
+            <label>Valid Mobile Number:</label>
+            <p id="valid"></p>
+            <label>Possibility of Number:</label>
+            <p id="possibility"></p>
+        </div>
+    </section>
+
 </body>
 </html>

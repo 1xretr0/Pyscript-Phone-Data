@@ -9,8 +9,16 @@
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 
     <style>
-        label {
-            font-weight: bold;
+        body {
+            background-color: black;
+        }
+
+        h1 {
+            color: greenyellow;
+        }
+
+        footer {
+            color: greenyellow;
         }
     </style>
     <title>PhoneData</title>
@@ -28,35 +36,40 @@
             <div class="text-center w-full mb-8">
                 <h1 class="text-3x1 font-bold uppercase tracking-tight">PhoneData with pyscript</h1>
             </div>
-            <div>
-                <p>Enter phonenumber with country code:</p>
-                <input id="phone-input" class="py-input" type="text" autocomplete="off" placeholder="+112233445566">
+            <div class="text-white">
+                <p>Type phonenumber with country code. Then press <b>enter</b>.</p>
+                <input id="phone-input" class="py-input" STYLE="color: black;"type="text" autocomplete="off" placeholder="+112233445566">
                 <!-- <input id="phone-input" class="py-input" type="text"> -->
                 <button id="s-button" class="py-button" type="submit" py-onclick="searchPhoneData">
                 SUBMIT</button>
             </div>
             <br>
-            <div>
-                <label>Phone Number:</label>
+            <div class="text-white">
+                <label class="font-bold">Phone Number:</label>
                 <span id="phone"></span>
                 <br/>
-                <label>Timezone:</label>
+                <label class="font-bold">Timezone:</label>
                 <span id="timezone"></span>
                 <br/>
-                <label>Region:</label>
+                <label class="font-bold">Carrier:</label>
+                <span id="carrier"></span>
+                <br/>
+                <label class="font-bold">Region:</label>
                 <span id="region"></span>
                 <br/>
-                <label>Valid Mobile Number:</label>
+                <label class="font-bold">Valid Mobile Number:</label>
                 <span id="valid"></span>
                 <br/>
-                <label>Possibility of Number:</label>
+                <label class="font-bold">Possibility of Number:</label>
                 <span id="possibility"></span>
             </div>
         </section>
     </main>
-
-
 </body>
+<footer class="">
+    <br/>
+    Powered by <code>phonenumbers</code> py package. Dreamed by retr0.
+</footer>
 </html>
 <!--          __       ____
    ________  / /______/ __ \

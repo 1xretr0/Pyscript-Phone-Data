@@ -16,7 +16,7 @@ def searchPhoneData(*ags, **kws):
     phone_timezone = timezone.time_zones_for_number(mobile_number)
 
     # get carrier of a phone number
-    # phone_carrier = carrier.name_for_number(mobile_number, 'en')
+    phone_carrier = carrier.name_for_number(mobile_number, 'en')
 
     # get region info
     phone_region = geocoder.description_for_number(mobile_number, 'en')
@@ -29,6 +29,7 @@ def searchPhoneData(*ags, **kws):
 
     pyscript.write('phone', phone_number.element.value)
     pyscript.write('timezone', phone_timezone)
+    pyscript.write('carrier', phone_carrier)
     pyscript.write('region', phone_region)
     pyscript.write('valid', phone_validation)
     pyscript.write('possibility', phone_possibility)
